@@ -9,8 +9,42 @@ import 'package:bepumped/model/serializers.dart';
 
 part 'exercise.g.dart';
 
+
+class ExerciseCategory extends EnumClass {
+  /// Example of how to make an [EnumClass] serializable.
+  ///
+  /// Declare a static final [Serializers] field called `serializer`.
+  /// The built_value code generator will provide the implementation. You need
+  /// to do this for every type you want to serialize.
+  static Serializer<ExerciseCategory> get serializer => _$exerciseCategorySerializer;
+
+  static const ExerciseCategory RESISTANCE = _$RESISTANCE;
+  static const ExerciseCategory REPITITION = _$REPITITION;
+  static const ExerciseCategory DURATION = _$DURATION;
+
+  const ExerciseCategory._(String name) : super(name);
+
+  static BuiltSet<ExerciseCategory> get values => _$values;
+  static ExerciseCategory valueOf(String name) => _$valueOf(name);
+}
+
+// class ExerciseCategory {
+//   final String _value;
+//   const ExerciseCategory._(this._value);
+//   static const RESISTANCE = ExerciseCategory._("Resistance");
+//   static const REPITITION = ExerciseCategory._("Repitition");
+//   static const DURATION = ExerciseCategory._("Duration");
+
+//   toString () => this._value;
+  
+// }
+
 abstract class Exercise implements Built<Exercise, ExerciseBuilder> {
   // fields go here
+
+  String get name;
+  @nullable String get description;
+  ExerciseCategory get category;
 
   Exercise._();
 
