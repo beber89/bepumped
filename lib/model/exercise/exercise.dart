@@ -28,17 +28,6 @@ class ExerciseCategory extends EnumClass {
   static ExerciseCategory valueOf(String name) => _$valueOf(name);
 }
 
-// class ExerciseCategory {
-//   final String _value;
-//   const ExerciseCategory._(this._value);
-//   static const RESISTANCE = ExerciseCategory._("Resistance");
-//   static const REPITITION = ExerciseCategory._("Repitition");
-//   static const DURATION = ExerciseCategory._("Duration");
-
-//   toString () => this._value;
-  
-// }
-
 abstract class Exercise implements Built<Exercise, ExerciseBuilder> {
   // fields go here
 
